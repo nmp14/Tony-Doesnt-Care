@@ -28,6 +28,7 @@ Chemical.init(
             allowNull: true
         },
         member_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: "member",
                 key: "id"
