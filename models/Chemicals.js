@@ -26,6 +26,12 @@ Chemical.init(
         serialCode: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        member_id: {
+            references: {
+                model: "member",
+                key: "id"
+            }
         }
     }, {
     sequelize,
