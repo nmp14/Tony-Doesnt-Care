@@ -3,7 +3,7 @@ const Member = require("../../models/Members");
 
 router.get("/", async (req, res) => {
     try {
-        const memberResult = await Chemical.findAll();
+        const memberResult = await Member.findAll();
 
         if (!memberResult) {
             res.status(404).json("Not Found");
