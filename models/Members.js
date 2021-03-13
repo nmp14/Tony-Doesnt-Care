@@ -22,15 +22,9 @@ Member.init(
                 isEmail: true
             }
         },
-        graduated: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
-        },
-        boss: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
+        role: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
