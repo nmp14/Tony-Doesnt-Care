@@ -7,7 +7,11 @@ form {
     max-width: 475px;
     margin: 0 auto;
 }
-
+/* for form descriptions */
+.text-light-grey {
+    color: #c4c4c4;
+}
+/* nav bar selected element */
 .selected {
     color: blue !important;
 }
