@@ -49,8 +49,35 @@ docReady(function () {
     }
     // Create html for each member card
     const generateCard = member => {
+        const card = `
+        <div class="col-lg-4 col-md-6">
+            <div class="card mb-4">
+                <div class="card-header text-light">
+                    <h5 class="card-title">${member.name}</h5>
+                    <h6 class="card-subtitle mb-2">${member.role}</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">${member.id}</li>
+                        <li class="list-group-item">${member.email}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+`
 
-    }
+        switch (member.role) {
+            case "boss":
+                bossCard.innerHTML += card;
+                break;
+            case "student":
+                memberCards.innerHTML += card;
+                break;
+            case "graduate":
+                graduatedCards.innerHTML += card;
+                break;
+        };
+    };
 
     init();
 });
