@@ -1,3 +1,7 @@
+const bossCard = document.getElementById("bossCard");
+const memberCards = document.getElementById("memberCards");
+const graduatedCards = document.getElementById("graduatedCards");
+
 function docReady(fn) {
     // see if DOM is already available
     if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -8,9 +12,17 @@ function docReady(fn) {
     }
 }
 
-testArr = ["name1", "name2", "name3"];
-
 // DOM is loaded and ready for manipulation here
 docReady(function () {
+    const init = () => {
+        if (window.location.pathname === "/members") {
+            renderCards();
+        }
+    }
 
+    const renderCards = () => {
+
+    }
+
+    init();
 });
