@@ -1,0 +1,28 @@
+[
+    {
+        "name": "n-butyl-lithium",
+        "location": "Fridge",
+        "distributor": "Simga Aldrich",
+        "member_id": 4
+    },
+    {
+        "name": "Chromium Oxide",
+        "location": "First Room Cabinets",
+        "distributor": "Simga Aldrich"
+    },
+    {
+        "name": "Chromium(III) Nitrate",
+        "location": "First Room Cabinets",
+        "distributor": "Simga Aldrich"
+    },
+    {
+        "name": "TMOS (Tetramethyl orthosilicate)",
+        "location": "Below Nathan's hood",
+        "distributor": "Simga Aldrich"
+    },
+    {
+        "name": "Hydrochloric Acid",
+        "location": "Below Su's old hood",
+        "distributor": "Simga Aldrich"
+    }
+]
