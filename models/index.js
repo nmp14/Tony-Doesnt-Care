@@ -8,3 +8,5 @@ Member.hasMany(Chemicals, {
 Chemicals.belongsTo(Member, {
     foreignKey: "member_id"
 });
+
+module.exports = { Member, Chemicals };
