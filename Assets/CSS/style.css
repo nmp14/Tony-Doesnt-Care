@@ -1,3 +1,8 @@
+body {
+    background: #555;
+    color: white;
+}
+/* Form for adding chemicals */
 form {
     max-width: 475px;
     margin: 0 auto;
@@ -14,7 +19,7 @@ form {
 hr {
     width: 75%;
     margin: 0 auto;
-    color: black
+    color: white;
 }
 
 #chemicalList {
@@ -27,7 +32,7 @@ ul span {
     font-size: 0.9em;
 }
 
-i {
+.delete-button {
     font-size: 1.5em;
     cursor: pointer;
     margin-left: 5px;
@@ -41,4 +46,18 @@ i {
 
 .text-crimson {
     color: crimson;
+}
+
+.card {
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 5px 10px 8px 2px #999;
+}
+
+.card-header {
+    background: cornflowerblue;
+}
+
+.card-body {
+    background: lightgrey;
 }
