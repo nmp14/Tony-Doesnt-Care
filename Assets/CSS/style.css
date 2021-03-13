@@ -10,3 +10,35 @@ form {
 #logo {
     color: teal;
 }
+
+hr {
+    width: 75%;
+    margin: 0 auto;
+    color: black
+}
+
+#chemicalList {
+    width: 300px;
+    margin: 0 auto;
+}
+
+ul span {
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+i {
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.flexCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-crimson {
+    color: crimson;
+}
