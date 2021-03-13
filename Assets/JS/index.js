@@ -2,28 +2,6 @@ const bossCard = document.getElementById("bossCard");
 const memberCards = document.getElementById("memberCards");
 const graduatedCards = document.getElementById("graduatedCards");
 
-// Test objects before db connection.
-const members = [{
-    name: "Dr. Albert Stiegman",
-    email: "stiegman@fsu.edu",
-    role: "boss"
-}, {
-    id: 2,
-    name: "Tony",
-    email: "tony@gmail.com",
-    role: "student"
-}, {
-    id: 3,
-    name: "cera",
-    email: "cera@gmail.com",
-    role: "student"
-}, {
-    id: 4,
-    name: "su",
-    email: "su@gmail.com",
-    role: "graduate"
-}];
-
 function docReady(fn) {
     // see if DOM is already available
     if (document.readyState === "complete" || document.readyState === "interactive") {
@@ -38,11 +16,18 @@ function docReady(fn) {
 docReady(function () {
     const init = () => {
         if (window.location.pathname === "/members") {
-            renderCards();
+            queryMembers().then(members => renderCards(members))
         }
     }
+
+    const queryMembers = async () => {
+        const results = await fetch("http://localhost:8080/api/members");
+        const resultsJSON = await results.json();
+        return resultsJSON;
+    }
+
     // Loop through members and call function to create HTML
-    const renderCards = () => {
+    const renderCards = (members) => {
         for (const member of members) {
             generateCard(member);
         }
@@ -67,13 +52,16 @@ docReady(function () {
 `
 
         switch (member.role) {
-            case "boss":
+            case "Boss":
                 bossCard.innerHTML += card;
                 break;
-            case "student":
+            case "Student":
                 memberCards.innerHTML += card;
                 break;
-            case "graduate":
+            case "PostDoc":
+                memberCards.innerHTML += card;
+                break;
+            case "Graduate":
                 graduatedCards.innerHTML += card;
                 break;
         };

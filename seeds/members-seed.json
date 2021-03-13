@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Dr. Stiegman",
+        "email": "Stiegman@chem.fsu.edu",
+        "role": "Boss"
+    },
+    {
+        "name": "Cera",
+        "email": "Cera@chem.fsu.edu",
+        "role": "Student"
+    },
+    {
+        "name": "Tony",
+        "email": "Tony@chem.fsu.edu",
+        "role": "Student"
+    },
+    {
+        "name": "Su",
+        "email": "Su@chem.fsu.edu",
+        "role": "Graduate"
+    },
+    {
+        "name": "Nathan",
+        "email": "nmp14fsu@gmail.com",
+        "role": "PostDoc"
+    }
+]

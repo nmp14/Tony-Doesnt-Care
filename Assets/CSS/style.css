@@ -51,11 +51,11 @@ ul span {
 .card {
     width: 300px;
     margin: 0 auto;
-    box-shadow: 5px 10px 8px 2px #999;
+    box-shadow: 5px 10px 5px 2px #888;
 }
 
 .card-header {
-    background: cornflowerblue;
+    background: teal;
 }
 
 .card-body {
