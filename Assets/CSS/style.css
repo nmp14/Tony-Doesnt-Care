@@ -21,9 +21,9 @@ hr {
     margin: 0 auto;
     color: white;
 }
-
+/* uL for chemicals in storage route */
 #chemicalList {
-    width: 300px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
