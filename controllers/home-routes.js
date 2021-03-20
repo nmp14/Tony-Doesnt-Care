@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Member = require("../models/Members");
 const Chemical = require("../models/Chemicals");
 const checkAuth = require("../middlewares");
+const User = require("../models/Users");
 const path = require("path");
 
 router.get("/", (req, res) => res.render('all', {
