@@ -63,5 +63,26 @@ router.get("/login", async (req, res) => {
     }
 });
 
+// Get profile for loggedIn user. Needs authentication check
+router.get("/profile", checkAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            include: {
+                model: Project
+            }
+        })
+
+        user = userData.get({ plain: true });
+
+        res.render("profile", {
+            user,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
+        })
+    } catch (e) {
+        console.log(e);
+        res.status(500).json(e);
+    }
+});
 
 module.exports = router;
