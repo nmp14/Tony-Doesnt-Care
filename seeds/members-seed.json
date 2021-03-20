@@ -1,27 +1,44 @@
 [
     {
-        "name": "Dr. Stiegman",
+        "name": "Dr. Albert Stiegman",
         "email": "Stiegman@chem.fsu.edu",
-        "role": "Boss"
+        "password": "Solgel123!@#",
+        "role_id": "1"
     },
     {
-        "name": "Cera",
-        "email": "Cera@chem.fsu.edu",
-        "role": "Student"
+        "name": "Cera Hsu",
+        "email": "cth17b@my.fsu.edu",
+        "password": "Solgel123!@#",
+        "role_id": "3"
     },
     {
-        "name": "Tony",
-        "email": "Tony@chem.fsu.edu",
-        "role": "Student"
+        "name": "Tony Hoffman",
+        "email": "aeh17d@my.fsu.edu",
+        "password": "Solgel123!@#",
+        "role_id": "3"
     },
     {
         "name": "Su",
         "email": "Su@chem.fsu.edu",
-        "role": "Graduate"
+        "password": "Solgel123!@#",
+        "role_id": "4"
     },
     {
-        "name": "Nathan",
+        "name": "Nathan Peek",
         "email": "nmp14fsu@gmail.com",
-        "role": "PostDoc"
+        "password": "Tigger123!@#",
+        "role_id": "2"
+    },
+    {
+        "name": "Jeremy Kuhne",
+        "email": "jak18f@my.fsu.edu",
+        "password": "Solgel123!@#",
+        "role_id": "3"
+    },
+    {
+        "name": "Waseem Afzaal",
+        "email": "wa18c@my.fsu.edu",
+        "password": "Solgel123!@#",
+        "role_id": "3"
     }
 ]

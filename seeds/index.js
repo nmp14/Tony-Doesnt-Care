@@ -1,13 +1,20 @@
 const sequelize = require('../config/connect');
-const Member = require("../models/Members");
+const User = require("../models/Users");
 const Chemical = require("../models/Chemicals");
-const memberData = require('./members-seed.json');
+const Role = require("../models/Roles");
+const userData = require('./members-seed.json');
 const chemicalData = require("./chemical-seed.json");
+const roleData = require("./roles-seed.json");
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: false });
 
-    await Member.bulkCreate(memberData, {
+    await Role.bulkCreate(roleData, {
+        individualHooks: true,
+        returning: true
+    });
+
+    await User.bulkCreate(userData, {
         individualHooks: true,
         returning: true,
     });
