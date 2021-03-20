@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form method="POST">
+                <h2 class="mb-4">Login</h2>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email: </label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+
+                <button id="loginBtn" type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <div class="col-6 ml-2">
+            <form method="POST">
+                <h2 class="mb-4">Signup</h2>
+
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Name: </label>
+                    <input type="text" class="form-control" id="userName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="emailRegister" class="form-label">Email: </label>
+                    <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passwordRegister" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordRegister">
+                </div>
+
+                <button id="registerBtn" type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/JS/login.js"></script>
