@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const Member = require("../models/Members");
 const Chemical = require("../models/Chemicals");
 const checkAuth = require("../middlewares");
 const User = require("../models/Users");
@@ -11,11 +10,11 @@ router.get("/", (req, res) => res.render('all', {
 
 router.get("/members", async (req, res) => {
     try {
-        const memberData = await Member.findAll();
+        const memberData = await User.findAll();
 
-        const members = memberData.map(member => member.get({ plain: true }));
+        const users = memberData.map(user => user.get({ plain: true }));
         res.render("members", {
-            members,
+            users,
             loggedIn: req.session.loggedIn
         });
     } catch (e) {
