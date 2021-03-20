@@ -27,10 +27,10 @@ Chemical.init(
             type: DataTypes.STRING,
             allowNull: true
         },
-        member_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "member",
+                model: "user",
                 key: "id"
             }
         }
