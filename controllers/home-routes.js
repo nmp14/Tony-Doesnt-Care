@@ -24,7 +24,7 @@ router.get("/members", async (req, res) => {
 
 router.get("/addForm", checkAuth, async (req, res) => {
     try {
-        const memberNamesRsults = await Member.findAll({
+        const memberNamesRsults = await User.findAll({
             attributes: ["name"]
         });
 

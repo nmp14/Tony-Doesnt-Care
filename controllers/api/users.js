@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const Member = require("../../models/Members");
+const User = require("../../models/Users");
 
 router.get("/", async (req, res) => {
     try {
-        const memberResult = await Member.findAll();
+        const memberResult = await User.findAll();
 
         if (!memberResult) {
             res.status(404).json("Not Found");
