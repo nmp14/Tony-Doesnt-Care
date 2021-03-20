@@ -4,7 +4,9 @@ const Chemical = require("../models/Chemicals");
 const checkAuth = require("../middlewares");
 const path = require("path");
 
-router.get("/", (req, res) => res.render('all'));
+router.get("/", (req, res) => res.render('all', {
+    loggedIn: req.session.loggedIn
+}));
 
 router.get("/members", async (req, res) => {
     try {
