@@ -7,7 +7,7 @@ const chemicalData = require("./chemical-seed.json");
 const roleData = require("./roles-seed.json");
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
 
     await Role.bulkCreate(roleData, {
         individualHooks: true,

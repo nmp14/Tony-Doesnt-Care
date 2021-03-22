@@ -3,42 +3,42 @@
         "name": "Dr. Albert Stiegman",
         "email": "Stiegman@chem.fsu.edu",
         "password": "Solgel123!@#",
-        "role_id": "1"
+        "role_id": 1
     },
     {
         "name": "Cera Hsu",
         "email": "cth17b@my.fsu.edu",
         "password": "Solgel123!@#",
-        "role_id": "3"
+        "role_id": 3
     },
     {
         "name": "Tony Hoffman",
         "email": "aeh17d@my.fsu.edu",
         "password": "Solgel123!@#",
-        "role_id": "3"
+        "role_id": 3
     },
     {
         "name": "Su",
         "email": "Su@chem.fsu.edu",
         "password": "Solgel123!@#",
-        "role_id": "4"
+        "role_id": 4
     },
     {
         "name": "Nathan Peek",
         "email": "nmp14fsu@gmail.com",
         "password": "Tigger123!@#",
-        "role_id": "2"
+        "role_id": 2
     },
     {
         "name": "Jeremy Kuhne",
         "email": "jak18f@my.fsu.edu",
         "password": "Solgel123!@#",
-        "role_id": "3"
+        "role_id": 3
     },
     {
         "name": "Waseem Afzaal",
         "email": "wa18c@my.fsu.edu",
         "password": "Solgel123!@#",
-        "role_id": "3"
+        "role_id": 3
     }
 ]
