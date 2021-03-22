@@ -1,8 +1,6 @@
 const router = require("express").Router();
-const Chemical = require("../models/Chemicals");
 const checkAuth = require("../middlewares");
-const User = require("../models/Users");
-const path = require("path");
+const { User, Role, Chemical } = require("../models");
 
 router.get("/", (req, res) => res.render('all', {
     loggedIn: req.session.loggedIn
@@ -10,11 +8,17 @@ router.get("/", (req, res) => res.render('all', {
 
 router.get("/members", async (req, res) => {
     try {
-        const memberData = await User.findAll();
+        const userData = await User.findAll({
+            include: [{
+                model: Role
+            }]
+        });
 
-        const users = memberData.map(user => user.get({ plain: true }));
+        const users = userData.map(user => user.get({ plain: true }));
+
+        console.log(users);
         res.render("members", {
-            users,
+            users: users,
             loggedIn: req.session.loggedIn
         });
     } catch (e) {
