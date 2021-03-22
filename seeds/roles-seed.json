@@ -1,14 +1,18 @@
 [
     {
+        "id": 1,
         "title": "Boss"
     },
     {
+        "id": 2,
         "title": "PostDoc"
     },
     {
+        "id": 3,
         "title": "Student"
     },
     {
+        "id": 4,
         "title": "Graduate"
     }
 ]

@@ -9,20 +9,14 @@ const roleData = require("./roles-seed.json");
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-    await Role.bulkCreate(roleData, {
-        individualHooks: true,
-        returning: true
-    });
+    await Role.bulkCreate(roleData);
 
     await User.bulkCreate(userData, {
         individualHooks: true,
         returning: true,
     });
 
-    await Chemical.bulkCreate(chemicalData, {
-        individualHooks: true,
-        returning: true,
-    });
+    await Chemical.bulkCreate(chemicalData);
 
     process.exit(0);
 };
