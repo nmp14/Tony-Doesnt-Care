@@ -45,7 +45,9 @@ router.get("/addForm", checkAuth, async (req, res) => {
 
 router.get("/storage", checkAuth, async (req, res) => {
     try {
-        const chemicalData = await Chemical.findAll();
+        const chemicalData = await Chemical.findAll({
+            include: { model: User }
+        });
 
         const chemicals = chemicalData.map(chemical => chemical.get({ plain: true }));
         res.render('storage', {
