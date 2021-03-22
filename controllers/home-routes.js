@@ -67,7 +67,11 @@ router.get("/chemical/:id", checkAuth, async (req, res) => {
         const { id } = req.params
         const idNum = parseInt(id);
 
-        const chemicalResult = await Chemical.findByPk(idNum);
+        const chemicalResult = await Chemical.findByPk(idNum, {
+            include: {
+                model: User
+            }
+        });
 
         if (!chemicalResult) {
             res.status(400).json("Chemical was not found");
