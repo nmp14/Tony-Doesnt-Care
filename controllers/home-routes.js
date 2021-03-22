@@ -43,10 +43,12 @@ router.get("/addForm", checkAuth, async (req, res) => {
     }
 });
 
+// Page that displays all chemicals avaialble
 router.get("/storage", checkAuth, async (req, res) => {
     try {
         const chemicalData = await Chemical.findAll({
-            include: { model: User }
+            include: { model: User },
+            attributes: ["name", "id"]
         });
 
         const chemicals = chemicalData.map(chemical => chemical.get({ plain: true }));
@@ -59,6 +61,30 @@ router.get("/storage", checkAuth, async (req, res) => {
     }
 });
 
+// Page for specific chemical information
+router.get("/chemical/:id", checkAuth, async (req, res) => {
+    try {
+        const { id } = req.params
+        const idNum = parseInt(id);
+
+        const chemicalResult = await Chemical.findByPk(idNum);
+
+        if (!chemicalResult) {
+            res.status(400).json("Chemical was not found");
+        }
+
+        const chemical = chemicalResult.get({ plain: true });
+
+        res.render("chemicalInfo", {
+            chemical,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (e) {
+        res.status(500).json(e);
+    }
+})
+
+// Login page
 router.get("/login", async (req, res) => {
     try {
         res.render("login", {
@@ -72,11 +98,7 @@ router.get("/login", async (req, res) => {
 // Get profile for loggedIn user. Needs authentication check
 router.get("/profile", checkAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id, {
-            include: {
-                model: Project
-            }
-        })
+        const userData = await User.findByPk(req.session.user_id)
 
         user = userData.get({ plain: true });
 
