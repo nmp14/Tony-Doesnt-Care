@@ -28,14 +28,14 @@ router.get("/members", async (req, res) => {
 
 router.get("/addForm", checkAuth, async (req, res) => {
     try {
-        const memberNamesRsults = await User.findAll({
-            attributes: ["name"]
+        const userResults = await User.findAll({
+            include: [{ model: Role }]
         });
 
-        const memberNames = memberNamesRsults.map(member => member.get({ plain: true }))
+        const users = userResults.map(member => member.get({ plain: true }))
 
         res.render("addForm", {
-            memberNames,
+            users,
             loggedIn: req.session.loggedIn
         });
     } catch (e) {
