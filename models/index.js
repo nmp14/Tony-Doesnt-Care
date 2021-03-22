@@ -1,21 +1,21 @@
-const Chemicals = require("./Chemicals");
+const Chemical = require("./Chemicals");
 const User = require("./Users");
 const Role = require("./Roles");
 
-User.hasMany(Chemicals, {
+User.hasMany(Chemical, {
     foreignKey: "user_id"
 });
 
-Chemicals.belongsTo(User, {
+Chemical.belongsTo(User, {
     foreignKey: "user_id"
 });
 
-User.hasOne(Role, {
+Role.hasMany(User, {
     foreignKey: "role_id"
 });
 
-Role.belongsTo(User, {
+User.belongsTo(Role, {
     foreignKey: "role_id"
 });
 
-module.exports = { Chemicals, Role, User };
+module.exports = { Chemical, Role, User };
