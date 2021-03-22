@@ -29,10 +29,16 @@
             <label for="memberOptions" class="mb-1">Member that owns chemical (if any)</label>
             <select name="memberOptions" id="memberOptions" class="form-select">
                 <option selected>Belongs to no one</option>
-                {{#each memberNames}}
-                <option value={{this.name}}>{{this.name}}</option>
+                {{#each users as |user|}}
+                {{#when user.role.title "!==" "Graduate"}}
+                <option value={{user.name}}>{{user.name}}</option>
+                {{/when}}
                 {{/each}}
             </select>
+        </div>
+        <div class="mb-3 mx-3">
+            <label for="chemicalDetails" class="form-label">Additional Details</label>
+            <textarea class="form-control" id="chemicalDetails" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary mx-3">Submit</button>
     </form>
