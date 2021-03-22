@@ -1,3 +1,49 @@
-<div class="container">
-    test
+<div class="container justify-content-center">
+    <div class="custom-card">
+        <div class="row mt-5 mb-0">
+            <div class="col-11 custom-header
+        text-center">
+                <h2><u>Chemical Name</u></h2>
+                <p>{{chemical.name}}</p>
+            </div>
+        </div>
+        <div class="row mt-0 my-5">
+            <div class="col-11 custom-body">
+                <p class="text-center"><u>Location</u></p>
+                {{#if chemical.location}}
+                <p class="text-center">{{chemical.location}}</p>
+                {{else}}
+                <p class="text-center">No location currently available</p>
+                {{/if}}
+                <div class="line mb-3"></div>
+                <p class="text-center"><u>Purchased From</u></p>
+                {{#if chemical.distributor}}
+                <p class="text-center">{{chemical.distributor}}</p>
+                {{else}}
+                <p class="text-center">No distributor information available</p>
+                {{/if}}
+                <div class="line mb-3"></div>
+                <p class="text-center"><u>Serial Code / Catalog Number / Identifier</u></p>
+                {{#if chemical.serial_code}}
+                <p class="text-center">{{chemical.serial_code}}</p>
+                {{else}}
+                <p class="text-center">No product identification available</p>
+                {{/if}}
+                <div class="line mb-3"></div>
+                <p class="text-center"><u>Chemical Used By</u></p>
+                {{#if chemical.user_id}}
+                <p class="text-center">{{chemical.user.name}}</p>
+                {{else}}
+                <p class="text-center">No one has claimed this chemical</p>
+                {{/if}}
+                <div class="line mb-3"></div>
+                <p class="text-center"><u>Additional details</u></p>
+                {{#if chemical.details}}
+                <p class="text-center">{{chemical.details}}</p>
+                {{else}}
+                <p class="text-center">No additional details</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
 </div>

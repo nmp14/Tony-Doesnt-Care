@@ -3,7 +3,7 @@
         "name": "n-butyl-lithium",
         "location": "Fridge",
         "distributor": "Simga Aldrich",
-        "member_id": 4
+        "user_id": 4
     },
     {
         "name": "Chromium Oxide",
