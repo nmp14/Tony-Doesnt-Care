@@ -1,24 +1,45 @@
 <h1 class="text-center mt-3 mb-5">The Boss</h1>
 
 <div class="container">
-    <div id="bossCard" class="row justify-content-center text-dark">{{member}}</div>
+    <div id="bossCard" class="row justify-content-center text-dark">
+        {{#each users as |user|}}
+        {{#when user.role.title '===' "Boss"}}
+        {{> member-details user}}
+        {{/when}}
+        {{/each}}
+    </div>
 </div>
 
 <h2 class="text-center mt-3 mb-5">Current Members</h2>
 
 <div class="container">
-    <div id="memberCards" class="row justify-content-center text-dark"></div>
+    <div id="memberCards" class="row justify-content-center text-dark">
+        {{#each users as |user|}}
+        {{#when user.role.title '===' "Student"}}
+        {{> member-details user}}
+        {{/when}}
+        {{/each}}
+        {{#each users as |user|}}
+        {{#when user.role.title '===' "PostDoc"}}
+        {{> member-details user}}
+        {{/when}}
+        {{/each}}
+    </div>
 </div>
 
 <h2 class="text-center mt-3 mb-5">Graduated Members</h2>
 
 <div class="container">
-    <div id="graduatedCards" class="row justify-content-center text-dark"></div>
+    <div id="graduatedCards" class="row justify-content-center text-dark">
+        {{#each users as |user|}}
+        {{#when user.role.title '===' "Graduate"}}
+        {{> member-details user}}
+        {{/when}}
+        {{/each}}
+    </div>
 </div>
 
 <!-- bootstrap -->
 <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
-<!-- custom js -->
-<script src="Assets/JS/index.js"></script>
