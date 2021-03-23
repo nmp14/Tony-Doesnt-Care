@@ -32,12 +32,10 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     
-    position: fixed;
-    top: 56px;
+    background-attachment: fixed;
     z-index: -1;
-    height: 80%;
     width: 100%;
-    min-height: 900px;
+    min-height: 1050px;
 }
 
 .ul-parent > ul {
@@ -46,7 +44,7 @@ html, body {
 
 .spacer {
     width: 100%;
-    height: 1000px;
+    height: 1039px;
 }
 
 #researchTopics {
