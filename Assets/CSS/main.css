@@ -5,6 +5,10 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.pointer {
+    cursor: pointer;
+}
   
 .background-wrapper {
     width: 100%;
@@ -16,12 +20,49 @@ html, body {
       linear-gradient(teal 0%, 35%, blue 90%), 
       linear-gradient(to right, teal 0%, 40%, purple 90%), 
       url("../images/solgel-wide.png");
-    background-position-x: center;
+    background-position: center;
     background-blend-mode: screen, difference, lighten;
     background-size: cover;
     background-repeat: no-repeat;
-
-    height: 80%;
+    
+    height: 100%;
     width: 100%;
     min-height: 900px;
+}
+
+.ul-parent > ul {
+    display: inline-block;
+}
+
+#researchTopics {
+    height: 200px;
+}
+
+#researchTopics a {
+    color: white;
+    text-decoration: none;
+}
+
+#researchTopics::before,
+#researchTopics::after {
+    content: "";
+    width: 80px;
+    height: 60px;
+    position: absolute;
+    bottom: 4em;
+    z-index: 1;
+    background: #555;
+}
+
+#researchTopics::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+}
+#researchTopics::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+}
+
+#catalysis {
+    background: teal;
 }
