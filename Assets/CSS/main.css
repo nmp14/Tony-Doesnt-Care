@@ -85,4 +85,14 @@ html, body {
     background: teal;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
     padding-bottom: 10vw;
+    margin-bottom: -10vw;
+}
+
+#microwaves {
+    padding-top: 10vw;
+    background: rgb(80, 188, 255);
+}
+
+#microwaves a {
+    color: white;
 }
