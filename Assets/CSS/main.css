@@ -6,6 +6,13 @@ html, body {
     padding: 0;
 }
 
+.navbar {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -25,7 +32,10 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     
-    height: 100%;
+    position: fixed;
+    top: 56px;
+    z-index: -1;
+    height: 80%;
     width: 100%;
     min-height: 900px;
 }
@@ -34,12 +44,20 @@ html, body {
     display: inline-block;
 }
 
+.spacer {
+    width: 100%;
+    height: 1000px;
+}
+
 #researchTopics {
     height: 200px;
+    position: relative;
+    background: #e6e6e6;
+    color:black;
 }
 
 #researchTopics a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -49,9 +67,9 @@ html, body {
     width: 80px;
     height: 60px;
     position: absolute;
-    bottom: 4em;
+    bottom: -0.9em;
     z-index: 1;
-    background: #555;
+    background: #e6e6e6;
 }
 
 #researchTopics::before {
@@ -65,4 +83,6 @@ html, body {
 
 #catalysis {
     background: teal;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    padding-bottom: 10vw;
 }
