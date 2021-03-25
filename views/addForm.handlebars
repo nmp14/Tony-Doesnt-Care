@@ -31,7 +31,7 @@
                 <option selected>Belongs to no one</option>
                 {{#each users as |user|}}
                 {{#when user.role.title "!==" "Graduate"}}
-                <option value={{user.name}}>{{user.name}}</option>
+                <option value={{user.id}}>{{user.name}}</option>
                 {{/when}}
                 {{/each}}
             </select>
@@ -40,7 +40,7 @@
             <label for="chemicalDetails" class="form-label">Additional Details</label>
             <textarea class="form-control" id="chemicalDetails" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary mx-3">Submit</button>
+        <button id="chemicalSubmit" type="submit" class="btn btn-primary mx-3">Submit</button>
     </form>
 </main>
 
