@@ -15,4 +15,15 @@ router.get("/", async (req, res) => {
     }
 });
 
+// Create chemical
+router.post("/", async (req, res) => {
+    try {
+        const chemical = await Chemical.create(req.body);
+
+        res.status(201).json(chemical);
+    } catch (e) {
+        res.status(500).json(e);
+    }
+});
+
 module.exports = router;
