@@ -26,4 +26,17 @@ router.post("/", async (req, res) => {
     }
 });
 
+// Delete chemical
+router.delete("/:id", async (req, res) => {
+    try {
+        const chemicalDelete = await Chemical.destroy({
+            where: { id: req.params.id }
+        });
+
+        res.status(200).json({ message: "Deleted" });
+    } catch (e) {
+        res.status(500).json(e);
+    }
+});
+
 module.exports = router;
