@@ -1,8 +1,11 @@
 <li class="list-group-item text-dark">
     <div class="row">
-        <div class="col-10 chemicalInfo"><a href="/chemical/{{this.id}}" data-id="{{this.id}}">{{this.name}}</a></div>
+        <div class="col-10 chemicalInfo"><a href="/chemical/{{this.id}}">{{this.name}}</a></div>
         <div class="col-2 flexCol">
-            <i class="fas fa-minus-square text-crimson delete-button" aria-hidden="true"></i>
+            {{!-- data-bs-toggle and target trigger modal on storage.handlebars --}}
+            <i class="fas fa-minus-square text-crimson chemical-delete-button" data-name="{{this.name}}"
+                data-id={{this.id}} aria-hidden="true" data-bs-toggle="modal"
+                data-bs-target="#confirmChemDeleteModal"></i>
         </div>
     </div>
 </li>
