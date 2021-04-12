@@ -7,6 +7,12 @@ form {
     max-width: 475px;
     margin: 0 auto;
 }
+
+/* Hide elements with display none */
+.hidden {
+    display: none;
+}
+
 /* for form descriptions */
 .text-light-grey {
     color: #c4c4c4;
