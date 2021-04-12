@@ -98,10 +98,38 @@ router.get("/login", async (req, res) => {
     }
 });
 
+// Register new user form
+router.get("/register", async (req, res) => {
+    try {
+        const roleData = await Role.findAll();
+
+        const roles = roleData.map(role => role.get({ plain: true }));
+
+        const filteredRoles = roles.filter(role => {
+            return role.title !== "Boss"
+        });
+
+        // Find role with title of student so we can move it to front of arr
+        for (const obj of filteredRoles) {
+            if (obj.title === "Student") {
+                const studentRole = filteredRoles.splice(filteredRoles.indexOf(obj), 1);
+                filteredRoles.unshift(...studentRole);
+            }
+        }
+
+        res.render("register", {
+            filteredRoles,
+            loggedIn: req.session.loggedIn
+        })
+    } catch (e) {
+        res.status(500).json(e);
+    }
+})
+
 // Get profile for loggedIn user. Needs authentication check
 router.get("/profile", checkAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id)
+        const userData = await User.findByPk(req.session.user_id);
 
         user = userData.get({ plain: true });
 
