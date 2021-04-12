@@ -99,7 +99,7 @@ router.get("/login", async (req, res) => {
 });
 
 // Register new user form
-router.get("/register", async (req, res) => {
+router.get("/register", checkAuth, async (req, res) => {
     try {
         const roleData = await Role.findAll();
 
