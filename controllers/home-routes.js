@@ -16,7 +16,6 @@ router.get("/members", async (req, res) => {
 
         const users = userData.map(user => user.get({ plain: true }));
 
-        console.log(users);
         res.render("members", {
             users: users,
             loggedIn: req.session.loggedIn
