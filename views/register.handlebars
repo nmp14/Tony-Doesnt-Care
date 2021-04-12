@@ -14,22 +14,23 @@
             </div>
             {{!-- password --}}
             <div class="mb-3">
-                <label for="registerPassword" class="form-label">Password</label>
+                <label for="registerPassword" class="form-label">Password (min 6 chars)</label>
                 <input type="password" class="form-control" id="registerPassword">
             </div>
             {{!-- select statement for selecting their role --}}
             <div class="mb-3">
                 <label for="roleSelect">Select their role</label>
-                <select class="form-select">
+                <select id="registerSelect" class="form-select">
                     {{#each filteredRoles as |role|}}
                     {{> role-details}}
                     {{/each}}
                 </select>
             </div>
-            <p id="missingInfoRegister" class="red hidden">Please enter both fields</p>
-            <button id="loginBtn" type="submit" class="btn btn-primary">Submit</button>
+            <p id="missingInfoRegister" class="red hidden">Please enter all fields</p>
+            <p id="sequelizeError" class="red"></p>
+            <button id="registerBtn" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </main>
 
-<script src="/JS/login.js"></script>
+<script src="Assets/JS/login.js"></script>
