@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../../models/Users");
 
+// Create user
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
@@ -10,7 +11,7 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+// Login
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
@@ -42,7 +43,7 @@ router.post('/login', async (req, res) => {
         res.status(400).json(err);
     }
 });
-
+// logout
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -52,6 +53,24 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
+// Delete user
+router.delete("/:id", async (req, res) => {
+    try {
+        const userDeleted = await User.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
 
+        if (!userDeleted) {
+            res.status(404).json("Could not find user");
+            return;
+        }
+
+        res.status(200).json("User successfully deleted");
+    } catch (e) {
+        res.status(500).json(e);
+    }
+});
 
 module.exports = router;
