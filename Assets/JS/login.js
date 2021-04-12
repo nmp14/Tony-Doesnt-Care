@@ -44,6 +44,5 @@ const login = async (event) => {
     }
 }
 
-
-registerBtn.addEventListener("click", register);
-loginBtn.addEventListener("click", login);
+if (registerBtn) registerBtn.addEventListener("click", register);
+if (loginBtn) loginBtn.addEventListener("click", login);
