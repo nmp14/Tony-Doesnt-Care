@@ -1,6 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+const path = require("path");
 const sequelize = require("./config/connect.js");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const helpers = require("./utils/helpers");
@@ -28,7 +29,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/assets", express.static('assets'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require("./controllers"));
 

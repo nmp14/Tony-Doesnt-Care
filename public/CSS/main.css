@@ -31,11 +31,11 @@ html, body {
     background-blend-mode: screen, difference, lighten;
     background-size: cover;
     background-repeat: no-repeat;
-    
-    background-attachment: fixed;
-    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 100%;
-    min-height: 850px;
+    z-index: -1;
 }
 
 .ul-parent > ul {
