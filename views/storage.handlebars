@@ -4,9 +4,13 @@
 
 <!-- List of chemicals filled by AJAX -->
 <ul id="chemicalList" class="list-group my-4 text-dark">
+    {{#if length}}
     {{#each chemicals as |chemical|}}
     {{> chemical-list chemical}}
     {{/each}}
+    {{else}}
+    <p class="text-center">There are no chemicals yet</p>
+    {{/if}}
 </ul>
 
 <!-- Modal -->

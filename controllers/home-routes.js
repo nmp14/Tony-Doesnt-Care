@@ -51,7 +51,10 @@ router.get("/storage", checkAuth, async (req, res) => {
         });
 
         const chemicals = chemicalData.map(chemical => chemical.get({ plain: true }));
+        const length = chemicals.length;
+
         res.render('storage', {
+            length,
             chemicals,
             loggedIn: req.session.loggedIn
         });
