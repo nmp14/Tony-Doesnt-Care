@@ -47,7 +47,8 @@ router.get("/storage", checkAuth, async (req, res) => {
     try {
         const chemicalData = await Chemical.findAll({
             include: { model: User },
-            attributes: ["name", "id"]
+            attributes: ["name", "id"],
+            order: [["name", "ASC"]]
         });
 
         const chemicals = chemicalData.map(chemical => chemical.get({ plain: true }));
