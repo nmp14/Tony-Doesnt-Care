@@ -1,8 +1,22 @@
 <h1 class="text-center my-4">List of Chemicals Available</h1>
+{{#if length}}
+<form class="hidden">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Search (WIP doesnt work yet)</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Find a chemical</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+</form>
+{{/if}}
 
 <hr>
+<ul id="alphabet" class="custom-flex">
 
-<!-- List of chemicals filled by AJAX -->
+</ul>
+
+<!-- List of chemicals -->
 <ul id="chemicalList" class="list-group my-4 text-dark">
     {{#if length}}
     {{#each chemicals as |chemical|}}
@@ -11,6 +25,10 @@
     {{else}}
     <p class="text-center">There are no chemicals yet</p>
     {{/if}}
+</ul>
+
+<ul id="searchedChemicalList" class="list-group my-4 text-dark hidden">
+
 </ul>
 
 <!-- Modal -->
