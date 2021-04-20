@@ -13,6 +13,14 @@ form {
     display: none;
 }
 
+.custom-flex {
+    display: flex;
+    justify-content: center;
+}
+.flex-align {
+    align-items: center;
+}
+
 /* for form descriptions */
 .text-light-grey {
     color: #c4c4c4;
@@ -36,6 +44,17 @@ hr {
     max-width: 450px;
     margin: 0 auto;
 }
+#alphabet {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+#alphabet li {
+    margin: 10px 5px;
+    cursor: pointer;
+}
 
 ul span {
     cursor: pointer;
@@ -47,6 +66,7 @@ ul span {
     cursor: pointer;
     margin-left: 5px;
 }
+/* End of chemical ul's */
 
 .flexCol {
     display: flex;
