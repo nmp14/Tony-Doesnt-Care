@@ -1,5 +1,6 @@
 const chemDeleteBtns = document.querySelectorAll(".chemical-delete-button");
 const confirmChemDeleteBtn = document.getElementById("confirmChemDelete");
+const chemicalAlphabet = document.getElementById("alphabet");
 
 // Function to add chemical name to modal
 const promptModal = async function (e) {
@@ -30,6 +31,22 @@ const deleteChemical = async function (e) {
     }
 }
 
+// List item letters to filter chemicals by
+const createAlphabet = () => {
+    for (let i = 65; i < 91; i++) {
+        const letter = String.fromCharCode(i);
+        const li = document.createElement("li");
+        li.innerHTML = letter;
+        if (letter && li) li.addEventListener("click", sortChemicalsByLetter);
+        chemicalAlphabet.append(li);
+    }
+}
+// Sort chemicals based on letter clicked
+const sortChemicalsByLetter = (e) => {
+    e.preventDefault();
+    console.log("placeholder");
+}
+
 // Chemical delete btns and add event listener
 if (chemDeleteBtns) {
     for (const btn of chemDeleteBtns) {
@@ -39,3 +56,4 @@ if (chemDeleteBtns) {
 
 // Confirm button on modal for deleting chemical
 if (confirmChemDeleteBtn) confirmChemDeleteBtn.addEventListener("click", deleteChemical);
+if (document.location.pathname === "/storage") createAlphabet();
